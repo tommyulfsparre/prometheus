@@ -65,7 +65,7 @@ func TestServersetDelete(t *testing.T) {
 	}
 
 	// Number of serverset members times amount of additions (addServers).
-	exceptedTargetUpdates := len(expectedMembers) * 2
+	expectedTargetUpdates := len(expectedMembers) * 2
 
 	// Start watching for target updates.
 	signal := make(chan struct{})
@@ -81,7 +81,7 @@ func TestServersetDelete(t *testing.T) {
 				}
 			}
 
-			if cnt >= exceptedTargetUpdates {
+			if cnt >= expectedTargetUpdates {
 				break
 			}
 		}
